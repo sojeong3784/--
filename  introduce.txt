@@ -1,0 +1,14 @@
+sklearn.linear_model에서 로지스틱 회귀 가져오기
+sklearn.model_selection 가져오기 train_test_split에서
+
+# 샘플 데이터 생성
+numpy를 np로 가져오기
+
+np.random.seed(42)
+X = np.random.randint(0, 11, (100, 3)) # 0~10 사이 숫자 3 개
+y = (X[:,0] > 5) & (X[:,1] < 4) # 결근 많고 만족도 낮으면 이직 위험 높음
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+모델 = 로지스틱 회귀()
+model.fit(X_train, y_train)
